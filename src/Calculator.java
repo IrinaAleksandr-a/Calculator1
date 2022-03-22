@@ -75,7 +75,7 @@ public class Calculator {
             case "S", "s" -> isExit = true;
             case "C", "c", "С", "с" -> isClean = true;
             default -> {
-                System.out.println("Вы допустили ошибку при вводе операции. Калькулятор распознает операции: +, -, *, /. Попробуйте еще раз.");
+                System.out.println("Вы допустили ошибку при вводе операции. Калькулятор распознает операции: +, -, *, /, ^. Попробуйте еще раз.");
                 System.out.println("Для сброса нажмите символ С, для выхода S.");
                 return getOperation();
             }
