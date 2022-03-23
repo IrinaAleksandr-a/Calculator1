@@ -70,12 +70,12 @@ public class Calculator {
         System.out.print("Введите операцию: ");
         String value = scanner.next();
         switch (value) {
-            case "+", "-", "*", "/" -> {
+            case "+", "-", "*", "/", "^" -> {
             }
             case "S", "s" -> isExit = true;
             case "C", "c", "С", "с" -> isClean = true;
             default -> {
-                System.out.println("Вы допустили ошибку при вводе операции. Калькулятор распознает операции: +, -, *, /. Попробуйте еще раз.");
+                System.out.println("Вы допустили ошибку при вводе операции. Калькулятор распознает операции: +, -, *, /, ^. Попробуйте еще раз.");
                 System.out.println("Для сброса нажмите символ С, для выхода S.");
                 return getOperation();
             }
@@ -94,6 +94,7 @@ public class Calculator {
                 }
                 yield operand1 / operand2;
             }
+            case '^' -> Math.pow(operand1,operand2);
             default -> {
                 System.out.println("Ошибка");
                 yield 0;
@@ -110,7 +111,7 @@ public class Calculator {
 
     private static void printDescription() {
         System.out.println("Добро пожаловать в калькулятор!");
-        System.out.println("Калькулятор умеет выполнять операции '+, -, *, /' для целых чисел и чисел с плавающей запятой.");
+        System.out.println("Калькулятор умеет выполнять операции '+, -, *, /, ^' для целых чисел и чисел с плавающей запятой.");
         System.out.println("Для сброса нажмите символ С, для выхода S.");
         System.out.println();
     }
